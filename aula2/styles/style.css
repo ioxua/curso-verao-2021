@@ -1,0 +1,61 @@
+h1 {
+  background-color: #636363;
+}
+
+h1#my-header {
+  background-color: #fafafa;
+  color: crimson;
+}
+
+p {
+  line-height: 1;
+  /* font-family: 'Times New Roman', Times, serif; */
+}
+
+p.red {
+  color: lightcoral;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p.red.bold {
+  color: crimson;
+}
+
+p.blue {
+  color: rgb(77, 223, 223);
+}
+
+#my-blue {
+  color: darkblue;
+}
+
+span {
+  font-size: 5px;
+}
+
+span.block, div span {
+  display: block;
+}
+
+span[class="block"], div span {
+  display: block;
+}
+
+div span {
+  font-size: unset;
+}
+
+section > span {
+  background-color: aqua;
+}
+
+ul li:nth-child(2n) {
+  background-color: aqua;
+}
+
+ul li:hover {
+  background-color: coral;
+}
