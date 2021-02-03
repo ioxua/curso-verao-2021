@@ -33,7 +33,7 @@ p.blue {
 }
 
 span {
-  font-size: 5px;
+  /* font-size: 5px; */
 }
 
 span.block, div span {
@@ -58,4 +58,63 @@ ul li:nth-child(2n) {
 
 ul li:hover {
   background-color: coral;
+}
+
+div.test {
+  width: 200px;
+  height: 200px;
+  /* background-color: lightcoral; */
+  border-style: dashed;
+  border-color: green;
+  border-width: 5px;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 15px;
+  margin: 15px;
+}
+
+div.test2 {
+  width: 200px;
+  height: 200px;
+  border-color: green;
+  border-width: 5px;
+  box-sizing: border-box; 
+}
+
+span.test2 {
+  width: 200px;
+  height: 200px;
+  border-color: green;
+  border-width: 5px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex div {
+  height: 200px;
+  flex-grow: 1;
+}
+
+.flex div {
+  background-color: red;
+}
+
+.flex div:nth-child(2n) {
+  background-color: blue;
+}
+
+@media (max-width: 600px) {
+  html {
+    background-color: aqua;
+  }
+}
+
+@media (prefers-color-scheme: dark)
+   and (max-width: 600px) {
+  html {
+    background-color: black;
+    color: white;
+  }
 }
