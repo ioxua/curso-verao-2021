@@ -1,0 +1,176 @@
+:root {
+  --header-height: 55px;
+  --header-padding: 5px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.header  {
+  background-color: #0081c3;
+}
+
+.header nav {
+  min-height: var(--header-height);
+}
+
+.header .hamburguer {
+  display: none;
+}
+
+.header nav ul {
+  height: var(--header-height);;
+}
+
+.header nav ul li {
+  display: inline-block;
+  height: var(--header-height);;
+  padding: var(--header-padding);
+  box-sizing: border-box;
+  color: aliceblue;
+
+  /* transition: all; */
+  transition: border;
+  transition-duration: .5s;
+}
+
+.header nav ul li a {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  line-height: calc(var(--header-height) - var(--header-padding) * 2);
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.header nav ul li a:visited {
+  color: unset;
+}
+
+.header nav ul li:hover {
+  background-color: #006394;
+  cursor: pointer;
+  border-bottom: solid white 5px;
+}
+
+.product-container {
+  display: flex;
+  padding: 0 12px;
+  margin-top: 24px;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0 auto;
+  /* flex:  1 0 21%; */
+  /* flex-direction: row; */
+}
+
+.product-container .product {
+  /* flex-grow: 1; */
+  max-width: 150px;
+  /* flex: 0 0 33.333333%; */
+        /* flex: 1 1 160px; */
+}
+
+.product-container .product a {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+.product-container .product img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  /* margin: 0 auto; */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.product-container .product p {
+  margin: 0 20px
+}
+
+.product-container .product .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product:hover {
+  transform: rotate(-180px);
+}
+
+.banner {
+  background-color: crimson;
+  margin-top: 15px;
+  padding: 35px 55px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.banner .link {
+  display: inline-block;
+  text-decoration: none;
+
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+  align-self: flex-start;
+}
+.banner .link:visited {
+  color: unset;
+}
+
+.page-footer {
+  display: flex;
+  background-color: #363636;
+}
+
+.page-footer div {
+  flex-grow: 1;
+}
+
+.page-footer .logo-container {
+  padding: 25px 35px;
+  color: white;
+}
+
+.page-footer .logo-container ul {
+  list-style: disc;
+  margin-left: 16px;
+}
+
+.page-footer .logo-container img {
+  max-width: 100%;
+  max-width: 500px;
+}
+
+.page-footer .map-container iframe {
+  min-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .header .hamburguer {
+    display: block;
+  }
+  .header .menu {
+    display: none;
+  }
+  .product-container {
+    flex-direction: column;
+  }
+  .product-container .product {
+    max-width: unset;
+    flex-grow: 1;
+  }
+}
