@@ -25,9 +25,9 @@ module.exports = {
   list(listDeleted = false) {
     const todos = readFile()?.todos ?? []
     const shownTodos = listDeleted ? (
-        todos
+      todos
     ) : (
-        todos.filter(it => !it.deleted)
+      todos.filter(it => !it.deleted)
     )
 
     return shownTodos
