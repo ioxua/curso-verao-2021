@@ -1,0 +1,82 @@
+<div class="ui grid stackable container">
+  <div class="sixteen wide column">
+    <h1>{{title}}</h1>
+    <form class="ui form" action="/todos" method="post">
+      <div class="one field">
+        <div class="required field">
+          <label>What do you have to do?</label>
+          <input type="text" name="todo" placeholder="Do laundry">
+        </div>
+      </div>
+      <button class="ui primary button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="sixteen wide column">
+    <div class="ui toggle checkbox">
+      <input type="checkbox" name="show-deleted" id="show-deleted">
+      <label>Show deleted?</label>
+    </div>
+    <table class="ui celled selectable table">
+      <thead>
+        <tr>
+          <th class="two wide">ID</th>
+          <th>What</th>
+          <th class="two wide">Exclude</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each todos}}
+          {{#if deleted}}
+            <tr class="disabled">
+          {{/if}}
+          {{#unless deleted}}
+            <tr>
+          {{/unless}}
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>
+              {{#if deleted}}
+                <a
+                  href="/todos/{{id}}/delete"
+                  class="ui circular label">
+                  ✗
+                </a>
+              {{/if}}
+              {{#unless deleted}}
+                <a
+                  href="/todos/{{id}}/delete"
+                  class="ui red circular label">
+                  ✗
+                </a>
+              {{/unless}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const setupShowDeleted = () => {
+    const showDeletedButton = document.getElementById('show-deleted')
+
+    const initialSearchParams = new URLSearchParams(window.location.search)
+    const initialState = initialSearchParams.get('showDeleted') ?? false
+    console.log('initial state', initialState)
+    showDeletedButton.checked = initialState
+
+    showDeletedButton.onchange = () => {
+      const showDeleted = showDeletedButton.checked
+
+      const searchParams = new URLSearchParams(window.location.search)
+      searchParams.set("showDeleted", showDeleted)
+      window.location.search = searchParams.toString()
+    }
+  }
+
+  window.onload = () => {
+    setupShowDeleted()
+  }
+</script>
