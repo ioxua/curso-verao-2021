@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+  <style>
+    /* * { margin: 0; padding: 0; } */
+    canvas {
+      border: solid 1px black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canv" width="800" height="600"></canvas>
+  <div>
+    <button id="clear">Clear</button>
+    <select id="size">
+      <option value="5">5px</option>
+      <option value="15">15px</option>
+      <option value="30">30px</option>
+      <option value="50">50px</option>
+    </select>
+    <input type="color" id="color">
+    <select id="format">
+      <option value="circle">Circle</option>
+      <option value="square">Square</option>
+    </select>
+    <input id="filled" type="checkbox"> Is filled
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

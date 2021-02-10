@@ -1,0 +1,2 @@
+- criar projeto com SASS/TS/Gulp
+- criar um crud de Users, com dashboard :)
