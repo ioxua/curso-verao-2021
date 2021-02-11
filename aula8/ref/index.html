@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>COUNTER!</h1>
+    <div id="counter">
+      <test-component name="Yehoshua"></test-component>
+  
+      Current value is {{ counter }}
+      <button v-on:click="increment">+</button>
+      <button v-on:click="decrement">-</button>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h1>Todo list!</h1>
+    <div id="todoList">
+      <input
+        type="text"
+        v-model="textInput"
+        @keyup.enter="save"
+      >
+      <iox-todo
+        v-for="todo in todos"
+        v-bind:todo="todo"
+        v-bind:key="todo.id"
+        v-on:toggle="toggleTodo"
+        v-on:exclude="exclude"
+      />
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="counter.js"></script>
+  <script src="todoList.js"></script>
+  <script>
+    window.ioxua.setupCounter()
+    window.ioxua.setupTodoList()
+  </script>
+</body>
+</html>
