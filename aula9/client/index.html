@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+  <!-- <a href="credits.html?q=oi">oiii</a> -->
+  <div class="container">
+    <form id="todo-form">
+      <div class="mb-3">
+        <label for="text" class="form-label">What do you have todo?</label>
+        <input type="text" class="form-control" id="text">
+      </div>
+      <input type="submit" class="btn btn-primary" value="Submit!">
+    </form>
+
+    <div id="todo-container" class="mt-5">
+    </div>
+  </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
