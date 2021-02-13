@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+  <ime-hello name="Joana"></ime-hello>
+  <ime-hello></ime-hello>
+
+  <template id="fancy-hello">
+    <h1 class="text-info">
+      Hello
+      <span>
+        <slot name="name">(null)</slot>
+      </span>
+    </h1>
+  </template>
+
+  <template id="card">
+    <style>
+      @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css');
+    </style>
+
+    <div class="card" style="width: 18rem;">
+      <img id="img" src="null" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">
+          <slot name="title"></slot>
+        </h5>
+        <p class="card-text">
+          <slot name="text"></slot>
+        </p>
+        <a href="#" class="btn btn-primary">
+          <slot name="button"></slot>
+        </a>
+      </div>
+    </div>
+  </template>
+
+  <ime-fancy-hello>
+    <span slot="name">Marcos</span>
+  </ime-fancy-hello>
+
+  <ime-fancy-hello>
+    <span slot="name">Ioxua</span>
+  </ime-fancy-hello>
+
+  <ime-card
+    src="https://via.placeholder.com/250"
+  >
+    <slot slot="title">Title</slot>
+    <slot slot="text">Text</slot>
+    <slot slot="button">button</slot>
+  </ime-card>
+
+  <ime-card>
+    <slot slot="title">Title</slot>
+    <slot slot="text">Text</slot>
+    <slot slot="button">button</slot>
+  </ime-card>
+
+  <script src="ime-hello.js"></script>
+  <script src="ime-fancy-hello.js"></script>
+  <script src="ime-card.js"></script>
+</body>
+</html>
